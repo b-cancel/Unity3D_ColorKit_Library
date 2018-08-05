@@ -1,4 +1,4 @@
-# Unity3D_ColorKit
+# Unity3D_ColorKit_Library
 
 This Library was created to allow people to 1. Linearly Interpolate between colors and 2. to mix colors in additively and subtractively.
 The currently supported color spaces include RGB, RYB, and CMYK.
