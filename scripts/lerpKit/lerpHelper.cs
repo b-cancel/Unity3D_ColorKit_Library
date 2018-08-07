@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -124,39 +124,7 @@ namespace lerpKit
                 return 441.672956f; // maxDistanceInRGBColorSpace
         }
 
-        //-------------------------CALCULATE LERP VALUE (using Guide Distance, Guide Time, Unit of Time, and Update Location)-------------------------
-
-        public static float calcLerpValue(float currValue, float endValue, float guideDistance, float guideTime, unitOfTime UOT_GD, updateLocation UL)
-        {
-            return calcLerpValue(currValue, endValue, calcLerpVelocity(guideDistance, guideTime, UOT_GD, UL));
-        }
-
-        public static float calcLerpValue(Vector2 currVector2, Vector2 endVector2, float guideDistance, float guideTime, unitOfTime UOT_GD, updateLocation UL)
-        {
-            return calcLerpValue(currVector2, endVector2, calcLerpVelocity(guideDistance, guideTime, UOT_GD, UL));
-        }
-
-        public static float calcLerpValue(Vector3 currVector3, Vector3 endVector3, float guideDistance, float guideTime, unitOfTime UOT_GD, updateLocation UL)
-        {
-            return calcLerpValue(currVector3, endVector3, calcLerpVelocity(guideDistance, guideTime, UOT_GD, UL));
-        }
-
-        public static float calcLerpValue(Vector4 currVector4, Vector4 endVector4, float guideDistance, float guideTime, unitOfTime UOT_GD, updateLocation UL)
-        {
-            return calcLerpValue(currVector4, endVector4, calcLerpVelocity(guideDistance, guideTime, UOT_GD, UL));
-        }
-
-        public static float calcLerpValue(float[] currValues, float[] endValues, float guideDistance, float guideTime, unitOfTime UOT_GD, updateLocation UL)
-        {
-            return calcLerpValue(currValues, endValues, calcLerpVelocity(guideDistance, guideTime, UOT_GD, UL));
-        }
-
-        public static float calcLerpValue(Color currColor, Color endColor, float guideDistance, float guideTime, unitOfTime UOT_GD, updateLocation UL)
-        {
-            return calcLerpValue(currColor, endColor, calcLerpVelocity(guideDistance, guideTime, UOT_GD, UL));
-        }
-
-        //-------------------------CALCULATE LERP VALUE (using Guide Velocity)-------------------------
+        //-------------------------CALCULATE LERP VALUE-------------------------
 
         public static float calcLerpValue(float currValue, float endValue, float lerpVelocity_DperF)
         {
@@ -219,6 +187,7 @@ namespace lerpKit
             return calcLerpVelocity(guideDistance, timeToFrames(timeToTravel_GD, UOT_GD, UL));
         }
 
+        //NOTE: this is public only so we can make our extension methods work
         public static float calcLerpVelocity(float guideDistance, float framesToTravel_GD) //frames of this type (update if we are in update... fixed update if we are in fixed upate)
         {
             return guideDistance / framesToTravel_GD;
@@ -226,6 +195,7 @@ namespace lerpKit
 
         //-------------------------HELPER FUNCTIONS-------------------------
 
+        //NOTE: this is public only so we can make our extension methods work
         public static float timeToFrames(float time, unitOfTime UOT, updateLocation UL) //Prefably calculate velocity and dont use this function directly
         {
             if (UOT == unitOfTime.frames)
