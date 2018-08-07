@@ -6,6 +6,7 @@
   <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="PayPal Donate Button">
 </a>
 
+
 This Library was created to allow people to 1. Linearly Interpolate between colors and 2. to mix colors in additively and subtractively.
 The currently supported color spaces include RGB, RYB, and CMYK.
 The Document links below explain how the Library works in more detail.
